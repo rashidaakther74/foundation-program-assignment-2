@@ -49,10 +49,10 @@ const Movies = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 md:p-8">
+    <div className="container mx-auto p-4 sm:p-6 md:p-8">
       <form
         onSubmit={handleSearch}
-        className="mb-12 max-w-2xl mx-auto flex gap-3"
+        className="mb-8 md:mb-12 max-w-2xl mx-auto flex flex-col sm:flex-row gap-3"
       >
         <div className="relative flex-grow">
           <Search
@@ -69,7 +69,7 @@ const Movies = () => {
         </div>
         <button
           type="submit"
-          className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition-colors shadow-lg"
+          className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition-colors shadow-lg w-full sm:w-auto"
         >
           Search
         </button>

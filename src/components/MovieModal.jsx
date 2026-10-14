@@ -13,16 +13,16 @@ const MovieModal = ({ movie, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative flex flex-col md:flex-row shadow-2xl border border-gray-700"
+        className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[95vh] md:max-h-[90vh] overflow-y-auto relative flex flex-col md:flex-row shadow-2xl border border-gray-700"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 bg-gray-800/80 hover:bg-red-600 text-white rounded-full p-2 z-10 transition-colors backdrop-blur-sm"
+          className="absolute top-3 right-3 md:top-4 md:right-4 bg-gray-800/80 hover:bg-red-600 text-white rounded-full p-2 z-10 transition-colors backdrop-blur-sm shadow-lg"
         >
           <X size={20} />
         </button>
@@ -30,30 +30,30 @@ const MovieModal = ({ movie, onClose }) => {
           <img
             src={image}
             alt={movie.name}
-            className="w-full h-full object-cover min-h-[300px] md:min-h-[500px]"
+            className="w-full h-56 sm:h-72 md:h-full object-cover md:min-h-[500px]"
           />
         </div>
-        <div className="p-8 md:w-7/12 flex flex-col">
-          <h2 className="text-3xl font-black mb-4 text-white leading-tight">
+        <div className="p-5 sm:p-6 md:p-8 md:w-7/12 flex flex-col">
+          <h2 className="text-2xl sm:text-3xl font-black mb-3 md:mb-4 text-white leading-tight pr-8">
             {movie.name}
           </h2>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300 mb-6 bg-gray-800/50 p-4 rounded-xl">
+          <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-300 mb-5 bg-gray-800/50 p-3 sm:p-4 rounded-xl">
             <div className="flex items-center gap-1.5 text-yellow-400 font-medium">
-              <Star size={16} className="fill-current" /> {rating}
+              <Star size={14} className="fill-current" /> {rating}
             </div>
-            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
+            <div className="w-1 h-1 bg-gray-500 rounded-full hidden sm:block"></div>
             <div className="flex items-center gap-1.5">
-              <Calendar size={16} className="text-gray-400" /> {year}
+              <Calendar size={14} className="text-gray-400" /> {year}
             </div>
-            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
+            <div className="w-1 h-1 bg-gray-500 rounded-full hidden sm:block"></div>
             <div className="flex items-center gap-1.5">
-              <Film size={16} className="text-gray-400" /> {genres}
+              <Film size={14} className="text-gray-400" /> {genres}
             </div>
           </div>
 
-          <div className="text-gray-300 text-base leading-relaxed mb-8 flex-grow">
-            <h4 className="font-bold text-white mb-3 text-lg border-b border-gray-700 pb-2">
+          <div className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow">
+            <h4 className="font-bold text-white mb-2 text-base sm:text-lg border-b border-gray-700 pb-2">
               Overview
             </h4>
             <div
@@ -65,7 +65,7 @@ const MovieModal = ({ movie, onClose }) => {
 
           <button
             onClick={onClose}
-            className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl transition-colors font-bold mt-auto flex items-center justify-center gap-2"
+            className="w-full bg-red-600 hover:bg-red-700 text-white py-2.5 sm:py-3 rounded-xl transition-colors font-bold mt-auto flex items-center justify-center gap-2"
           >
             <X size={18} />
             Close Details
